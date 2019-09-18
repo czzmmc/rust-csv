@@ -1,4 +1,5 @@
-use std::fs::File;
+use std::untrusted::fs::File;
+use std::boxed::*;
 use std::io::{self, BufRead, Seek};
 use std::marker::PhantomData;
 use std::path::Path;

@@ -98,10 +98,11 @@ foo,\"bar,baz\"
 
 #![deny(missing_docs)]
 #![no_std]
+#![cfg_attr(target_env = "sgx", feature(rustc_private))]
 
 #[cfg(test)]
 extern crate arrayvec;
-extern crate memchr;
+extern crate sgx_trts;
 
 pub use reader::{
     Reader, ReaderBuilder,

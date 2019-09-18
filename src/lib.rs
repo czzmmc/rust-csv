@@ -167,6 +167,12 @@ $ cargo run --example cookbook-read-serde < examples/data/smallpop.csv
 */
 
 #![deny(missing_docs)]
+#![cfg_attr(not(target_env = "sgx"), no_std)]
+#![cfg_attr(target_env = "sgx", feature(rustc_private))]
+
+#[cfg(not(target_env = "sgx"))]
+#[macro_use]
+extern crate sgx_tstd as std;
 
 extern crate csv_core;
 extern crate serde;
@@ -176,6 +182,8 @@ extern crate serde_bytes;
 #[macro_use]
 extern crate serde_derive;
 
+
+
 use std::result;
 
 use serde::{Deserialize, Deserializer};
@@ -183,7 +191,7 @@ use serde::{Deserialize, Deserializer};
 pub use byte_record::{ByteRecord, ByteRecordIter, Position};
 pub use deserializer::{DeserializeError, DeserializeErrorKind};
 pub use error::{
-    Error, ErrorKind, FromUtf8Error, IntoInnerError, Result, Utf8Error,
+    Error, ErrorKind, FromUtf8Error, IntoInnerError, Result, Utf8Error,new_utf8_error
 };
 pub use reader::{
     Reader, ReaderBuilder,

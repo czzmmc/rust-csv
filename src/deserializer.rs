@@ -3,6 +3,7 @@ use std::fmt;
 use std::iter;
 use std::num;
 use std::str;
+use std::string::*;
 
 use serde::de::{
     Deserializer, DeserializeSeed, Deserialize, IntoDeserializer,

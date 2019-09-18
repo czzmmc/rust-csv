@@ -1,6 +1,9 @@
 use std::ascii;
 use std::cmp;
 use std::fmt;
+use std::string::*;
+use std::vec::*;
+use std::boxed::*;
 use std::iter::FromIterator;
 use std::ops::{self, Range};
 use std::result;

@@ -3,9 +3,10 @@ use std::fmt;
 use std::io;
 use std::result;
 use std::str;
-
 use byte_record::{ByteRecord, Position};
 use deserializer::DeserializeError;
+use std::string::*;
+use std::boxed::*;
 
 /// A crate private constructor for `Error`.
 pub fn new_error(kind: ErrorKind) -> Error {

@@ -4,6 +4,8 @@ use std::iter::FromIterator;
 use std::ops::{self, Range};
 use std::result;
 use std::str;
+use std::string::*;
+use std::vec::*;
 
 use serde::de::Deserialize;
 

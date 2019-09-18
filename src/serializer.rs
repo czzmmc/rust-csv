@@ -1,6 +1,7 @@
 use std::fmt;
 use std::io;
 use std::mem;
+use std::string::*;
 
 use serde::ser::{
     Error as SerdeError,

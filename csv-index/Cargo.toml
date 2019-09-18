@@ -18,8 +18,11 @@ appveyor = { repository = "BurntSushi/rust-csv" }
 [lib]
 bench = false
 
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+#sgx_tstd = { path =  "../../../sgx_tstd" }
+sgx_tstd = { rev ="v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
 [dependencies]
-byteorder = "1"
+byteorder = { path="../../byteorder"}
 csv = { path = "..", version = "1.0.0-beta.5" }
 
 [profile.release]
@@ -27,3 +30,8 @@ debug = true
 
 [profile.bench]
 debug = true
+
+[features]
+default = ["std","mesalock_sgx"]
+std=[]
+mesalock_sgx = ["sgx_tstd"]
