@@ -22,7 +22,7 @@ bench = false
 #sgx_tstd = { path =  "../../../sgx_tstd" }
 sgx_tstd = { rev ="v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
 [dependencies]
-byteorder = { path="../../byteorder"}
+byteorder = { git = "https://github.com/mesalock-linux/byteorder-sgx"}
 csv = { path = "..", version = "1.0.0-beta.5" }
 
 [profile.release]
