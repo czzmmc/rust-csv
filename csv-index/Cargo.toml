@@ -20,9 +20,9 @@ bench = false
 
 [target.'cfg(not(target_env = "sgx"))'.dependencies]
 #sgx_tstd = { path =  "../../../sgx_tstd" }
-sgx_tstd = { rev ="v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
+sgx_tstd = { git = "https://github.com/apache/teaclave-sgx-sdk", rev = "v1.1.2", optional = true }
 [dependencies]
-byteorder = { path="../../byteorder"}
+byteorder = { git = "https://github.com/mesalock-linux/byteorder-sgx" }
 csv = { path = "..", version = "1.0.0-beta.5" }
 
 [profile.release]

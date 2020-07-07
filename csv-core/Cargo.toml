@@ -22,7 +22,7 @@ bench = false
 #memchr = { version = "1", default-features = false }
 
 [target.'cfg(not(target_env = "sgx"))'.dependencies]
-sgx_trts = { rev = "v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git"}
+sgx_trts = { git = "https://github.com/apache/teaclave-sgx-sdk", rev = "v1.1.2" }
 
 [dev-dependencies]
 arrayvec = { version = "0.3", default-features = false }
